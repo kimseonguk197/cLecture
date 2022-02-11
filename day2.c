@@ -235,6 +235,7 @@ int main(void) {
 
 //2중포문 구구단
 
+/*
 int main(void) {
 	for (int i = 2; i < 10; i++) {
 		for (int j = 2; j < 10; j++) {
@@ -242,3 +243,4 @@ int main(void) {
 		}
 	}
 }
+*/
