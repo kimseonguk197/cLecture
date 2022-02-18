@@ -84,12 +84,16 @@ int main() {
 int main() {
 	int n = 100;
 	int*ptr = & n; 
+	char c = 'a';
+	char* ptrc = &c;
 	printf("%d\n", *ptr);
 	printf("%#x\n", ptr);
 	printf("%#x\n", ptr+1);
+	printf("%#x\n", &ptr);
+	printf("%#x\n", *&ptr);
+	//printf("%d\n", sizeof(ptrc));
 
-}
-*/
+}*/
 
 
 
@@ -167,55 +171,14 @@ int main(void)
 	}
 }
 */
-//배열의 메모리 구조
 /*
+//포인터의 포인터 접근
 int main() {
-	int i;
-	int sum = 0;
-	int grade[3];        // 길이가 3인 int형 배열 선언  
-
-	grade[0] = 85;       // 국어 점수
-	grade[1] = 65;       // 영어 점수
-	grade[2] = 90;       // 수학 점수  
-
-	printf("배열의 메모리 주소 %x\n", grade);
-	printf("배열의 메모리 주소 %#x\n", &grade);
-	printf("국어점수의 메모리 주소 %d\n", &grade[0]);
-	printf("영어점수의 메모리 주소 %d\n", &grade[1]);
-	printf("수학점수의 메모리 주소 %d\n", &grade[2]);
-
-	int* ptrgrade = grade;
-	printf("국어점수의 메모리 주소 %#x\n", ptrgrade + 1);
-	printf("영어점수의 메모리 주소 %#x\n", ptrgrade + 2);
-	printf("수학점수의 메모리 주소 %#x\n", grade + 3);
-
-
-	return 0;
+	int num = 10;              // 변수 선언
+	int* ptr_num = &num;       // 포인터 선언
+	int** pptr_num = &ptr_num; // 포인터의 포인터 선언
+	printf("변수 num가 저장하고 있는 값은 %d입니다.\n", num);
+	printf("포인터  ptr_num가 가리키는 주소에 저장된 값은 %d입니다.\n", *ptr_num);
+	printf("포인터의 포인터 pptr_num가 가리키는 주소에 저장된 포인터가 가리키는 주소에 저장된 값은 %d입니다.\n", **pptr_num);
 }
 */
-
-//배열과 포인터의 관계를 이용한 활용
-void printArr(int(*pArr)[4], int row, int col) {
-	int i, j;
-	for (i = 0; i < row; i++) {
-		for (j = 0; j < col; j++)
-			printf("%d ", pArr[i][j]);
-		printf("\n");
-	}
-}
-int main() {
-	int arr[3][4] = {
-		{1,2,3,4},
-		{5,6,7,8},
-		{9,10,11,12}
-	};
-
-	int row = sizeof(arr) / sizeof(arr[0]);
-	int col = sizeof(arr[0]) / sizeof(arr[0][0]);
-	printArr(arr, row, col);
-
-
-}
-//매개변수를 받으려면 위와 같이 전달받고, 배열처럼 인덱싱을 편하게 사용할 수 있습니다.
-//더 간편한 방법으로는 int(*pArr)[4]를 int pArr[][4]로 바꿔줘도 실행이 가능합니다.왜냐면* pArr은 pArr[]과 거의 같은 의미이기 때문입니다.
-//https://reakwon.tistory.com/33 참고

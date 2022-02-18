@@ -233,6 +233,7 @@ int main(void)
 
 
 //변수의 유효범위 - 전역변수
+/*
 void local(void);
 int var; // 전역 변수 선언    
 int main(void)
@@ -255,4 +256,4 @@ void local(void)
 {
 	var = 20; // 전역 변수의 값 변경
 	printf("local() 함수 내에서 접근한 전역 변수 var의 값은 %d입니다.\n", var);
-}
+}*/
