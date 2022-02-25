@@ -2,40 +2,40 @@
 #include <string.h>
 
 
-//ÀÔÃâ·ÂÇÔ¼ö ÃÑÁ¤¸®
+//ì…ì¶œë ¥í•¨ìˆ˜ ì´ì •ë¦¬
 //scanf
 /*
 int main(void)
 {
 	//scanf
 	//int num;
-	//printf("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+	//printf("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 	//scanf("%d", &num);  
-	//¸¸¾à¿¡ "%d " ¶Ç´Â "%d\n"À» ÇÏ¸é ¼ıÀÚµÚ¿¡ °ø¹éÀÌ ¾Æ´Ñ ´Ù¸¥ °ªÀÌ ³ª¿À±â Àü±îÁöÀÇ ±â´Ù¸®¶ó´Â ÀÇ¹Ì. ex)scanf("%d %d", &num, &num02); 
+	//ë§Œì•½ì— "%d " ë˜ëŠ” "%d\n"ì„ í•˜ë©´ ìˆ«ìë’¤ì— ê³µë°±ì´ ì•„ë‹Œ ë‹¤ë¥¸ ê°’ì´ ë‚˜ì˜¤ê¸° ì „ê¹Œì§€ì˜ ê¸°ë‹¤ë¦¬ë¼ëŠ” ì˜ë¯¸. ex)scanf("%d %d", &num, &num02); 
 	
 	//printf("%d", num);
 
-	//scanfÀÇ °³ÇàÀÌ½´ÇØ°á >> " %c"¸¦ ÇÏ°Å³ª(°ø¹éÀÌÈÄ¿¡ ¹®ÀÚ°ªÀÌ ³ª¿Ã¶§±îÁö ±â´Ù¸®¶ó´Â ÀÇ¹Ì), rewind(stdin)
+	//scanfì˜ ê°œí–‰ì´ìŠˆí•´ê²° >> " %c"ë¥¼ í•˜ê±°ë‚˜(ê³µë°±ì´í›„ì— ë¬¸ìê°’ì´ ë‚˜ì˜¬ë•Œê¹Œì§€ ê¸°ë‹¤ë¦¬ë¼ëŠ” ì˜ë¯¸), rewind(stdin)
 	//char a;
-	//printf("¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+	//printf("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 	//scanf("%d", &num);
-	//printf("¹®ÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+	//printf("ë¬¸ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 	//scanf("%c", &a);
 
-	//¹®ÀÚ¿­ ÀÔ·Â
+	//ë¬¸ìì—´ ì…ë ¥
 	char aa[4];
 	scanf("%s", aa);
 	printf("%s", aa);
 
 }*/
 
-//printf¿Í putsÀÇ Â÷ÀÌ
+//printfì™€ putsì˜ ì°¨ì´
 /*
 int main(void)
 {	
 	char str[] = "hello";
 	printf("%d %s %c \n", 1, "hello", 'a');
-	puts("hello c¾ğ¾î %d", 3);
+	puts("hello cì–¸ì–´ %d", 3);
 	puts(str);
 }
 */
@@ -57,8 +57,8 @@ int main(void)
 
 {
 	char ch;
-	printf("EOF°¡ ÀÔ·ÂµÉ ¶§±îÁö ¿µ¹®ÀÚ¸¦ °è¼Ó ÀÔ·Â¹Ş½À´Ï´Ù :\n");
-	printf("(À©µµ¿ì¿¡¼­ EOFÀÇ °­Á¦ ¹ß»ıÀº Ctrl+Z¸¦ ´©¸£°í ³ª¼­ Enter¸¦ ´©¸£¸é µË´Ï´Ù)\n");
+	printf("EOFê°€ ì…ë ¥ë  ë•Œê¹Œì§€ ì˜ë¬¸ìë¥¼ ê³„ì† ì…ë ¥ë°›ìŠµë‹ˆë‹¤ :\n");
+	printf("(ìœˆë„ìš°ì—ì„œ EOFì˜ ê°•ì œ ë°œìƒì€ Ctrl+Zë¥¼ ëˆ„ë¥´ê³  ë‚˜ì„œ Enterë¥¼ ëˆ„ë¥´ë©´ ë©ë‹ˆë‹¤)\n");
 	while ((ch = getchar()) != EOF)
 	{
 		putchar(ch);
@@ -69,22 +69,22 @@ int main(void)
 */
 
 
-//¹®ÀÚ¿­
+//ë¬¸ìì—´
 /*
 int main(void)
 {
-	char str01[] = "This is a string.";    // Å©±â¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀº ¹®ÀÚ¿­ º¯¼ö ¼±¾ğ
-	char str02[7] = "string";              // Å©±â¸¦ ÁöÁ¤ÇÑ ¹®ÀÚ¿­ º¯¼ö ¼±¾ğ
+	char str01[] = "This is a string.";    // í¬ê¸°ë¥¼ ì§€ì •í•˜ì§€ ì•Šì€ ë¬¸ìì—´ ë³€ìˆ˜ ì„ ì–¸
+	char str02[7] = "string";              // í¬ê¸°ë¥¼ ì§€ì •í•œ ë¬¸ìì—´ ë³€ìˆ˜ ì„ ì–¸
 
 	for (int i = 0; i < 7; i++) {
 		printf("%c", str02[i]);
 	}
 
-	printf("¹®ÀÚ¿­ str01¿¡ ÀúÀåµÇ¾î ÀÖ´Â ¹®ÀÚ¿­Àº \"%s\"ÀÔ´Ï´Ù.\n", str01);
-	printf("¹®ÀÚ¿­ str02¿¡ ÀúÀåµÇ¾î ÀÖ´Â ¹®ÀÚ¿­Àº \"%s\"ÀÔ´Ï´Ù.\n", str02);
+	printf("ë¬¸ìì—´ str01ì— ì €ì¥ë˜ì–´ ìˆëŠ” ë¬¸ìì—´ì€ \"%s\"ì…ë‹ˆë‹¤.\n", str01);
+	printf("ë¬¸ìì—´ str02ì— ì €ì¥ë˜ì–´ ìˆëŠ” ë¬¸ìì—´ì€ \"%s\"ì…ë‹ˆë‹¤.\n", str02);
 
-	char str[] = "C¾ğ¾î";
-	printf("ÀÌ ¹®ÀÚ¿­ÀÇ ±æÀÌ´Â %dÀÔ´Ï´Ù.\n", strlen(str));
+	char str[] = "Cì–¸ì–´";
+	printf("ì´ ë¬¸ìì—´ì˜ ê¸¸ì´ëŠ” %dì…ë‹ˆë‹¤.\n", strlen(str));
 }
 */
 
@@ -92,7 +92,7 @@ int main(void)
 #pragma warning(disable:4996)
 #include <stdio.h>
 #include <string.h>
-/* ¹®ÀÚ¿­ 1¹ø Æ÷ÀÎÅÍ·Î Ç®¾îº¸±â*/
+/* ë¬¸ìì—´ 1ë²ˆ í¬ì¸í„°ë¡œ í’€ì–´ë³´ê¸°*/
 /*
 int main() {
 	char s1[30] = " ";
@@ -129,7 +129,7 @@ int main() {
 */
 
 
-/* ¹®ÀÚ¿­ 2¹ø ÇÔ¼ö·Î ±¸ÇöÇÏ±â*/
+/* ë¬¸ìì—´ 2ë²ˆ í•¨ìˆ˜ë¡œ êµ¬í˜„í•˜ê¸°*/
 /*
 void changestr(char* p, int len);
 int main() {
@@ -161,7 +161,7 @@ void changestr(char* p, int len)
 }
 */
 
-//¹®ÀÚ¿­ Æ÷ÀÎÅÍ 3¹ø¹®Á¦
+//ë¬¸ìì—´ í¬ì¸í„° 3ë²ˆë¬¸ì œ
 /*#pragma warning(disable:4996)
 #include <stdio.h>
 addArray(int* a, int* b, int* c, int n);
@@ -202,7 +202,7 @@ addArray(int* a, int* b, int* c, int n)
 */
 
 
-//±¸Á¶Ã¼ ±âº»
+//êµ¬ì¡°ì²´ ê¸°ë³¸
 /*
 int main() {
 
@@ -212,15 +212,15 @@ int main() {
 		char author[30];
 		int price;
 	};
-	struct book mybook = {"HTML°ú CSS", "È«±æµ¿", 28000};
-	struct book friendbook = { .title = "java", .author = "È«±æ¼ø", 14000 };
-	printf("³ªÀÇ Ã¥ÀÇ Á¦¸ñÀº %sÀÌ°í, ÀúÀÚ´Â %sÀÌ¸ç, °¡°İÀº %d¿øÀÔ´Ï´Ù.\n", mybook.title, mybook.author, mybook.price);
+	struct book mybook = {"HTMLê³¼ CSS", "í™ê¸¸ë™", 28000};
+	struct book friendbook = { .title = "java", .author = "í™ê¸¸ìˆœ", 14000 };
+	printf("ë‚˜ì˜ ì±…ì˜ ì œëª©ì€ %sì´ê³ , ì €ìëŠ” %sì´ë©°, ê°€ê²©ì€ %dì›ì…ë‹ˆë‹¤.\n", mybook.title, mybook.author, mybook.price);
 
-	printf("Ä£±¸ÀÇ Ã¥ÀÇ Á¦¸ñÀº %sÀÌ°í, ÀúÀÚ´Â %sÀÌ¸ç, °¡°İÀº %d¿øÀÔ´Ï´Ù.\n", friendbook.title, friendbook.author, friendbook.price);
+	printf("ì¹œêµ¬ì˜ ì±…ì˜ ì œëª©ì€ %sì´ê³ , ì €ìëŠ” %sì´ë©°, ê°€ê²©ì€ %dì›ì…ë‹ˆë‹¤.\n", friendbook.title, friendbook.author, friendbook.price);
 }
 */
 
-//±¸Á¶Ã¼ ¹è¿­
+//êµ¬ì¡°ì²´ ë°°ì—´
 int main() {
 	struct book
 	{
@@ -230,10 +230,10 @@ int main() {
 	};
 	struct book text_book[3] =
 	{
-		{"±¹¾î", "È«±æµ¿", 15000},
-		{"¿µ¾î", "ÀÌ¼ø½Å", 18000},
-		{"¼öÇĞ1", "°­°¨Âù", 10000}
+		{"êµ­ì–´", "í™ê¸¸ë™", 15000},
+		{"ì˜ì–´", "ì´ìˆœì‹ ", 18000},
+		{"ìˆ˜í•™1", "ê°•ê°ì°¬", 10000}
 	};
-	puts("°¢ ±³°ú¼­ÀÇ ÀÌ¸§Àº ´ÙÀ½°ú  °°½À´Ï´Ù.");
+	puts("ê° êµê³¼ì„œì˜ ì´ë¦„ì€ ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.");
 	printf("%s, %s, %s\n", text_book[0].title, text_book[1].title, text_book[2].title);
 }
