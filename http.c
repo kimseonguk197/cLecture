@@ -23,10 +23,13 @@
 int bind_lsock(int lsock, int port) {
     struct sockaddr_in sin;
 
+    //AF는 접속하는 방식을 지정하는 것으로서 AF_INET는 IPv4주소체계 인터넷망접속을 의미
     sin.sin_family = AF_INET;
+    //INADDR_ANY는 랜카드 중 사용가능한 랜카드의 IP주소를 의미
     sin.sin_addr.s_addr = htonl(INADDR_ANY);
     sin.sin_port = htons(port);
-
+    
+    //bind()함수는 소켓에 주소를 할당 해주는 함수
     return bind(lsock, (struct sockaddr*)&sin, sizeof(sin));
 }
 
@@ -147,9 +150,12 @@ int main(int argc, char** argv) {
     int port, pid;
     int lsock, asock;
 
+    //소켓(Socket)은, 프로세스가 네트워크를 통해서 데이터를 주고받으려면 반드시 열어야 하는 창구 같은 것
+    //포트는 네트워크를 통해 데이터를 주고받는 프로세스를 식별하기 위해 호스트 내부적으로 프로세스가 할당받는 고유한 값
     struct sockaddr_in remote_sin;
     socklen_t remote_sin_len;
 
+    //int argc는 정보의 갯수, argv는 전달되는 정보
     if (argc < 2) {
         printf("Usage: \n");
         printf("\t%s {port}: runs mini HTTP server.\n", argv[0]);
@@ -159,6 +165,11 @@ int main(int argc, char** argv) {
     port = atoi(argv[1]);
     printf("[INFO] The server will listen to port: %d.\n", port);
 
+    //int socket(int domain, int type, int protocol);
+    //socket() creates an endpoint for communicationand returns a descriptor.
+    //AF_UNIX(프로토콜 내부에서), AF_INET(IPv4), AF_INET6(IPv6)
+    //SOCK_STREAM(TCP), SOCK_DGRAM(UDP), SOCK_RAW(사용자 정의)
+    //프로토콜의 값을 결정 0또는 IPPROTO_TCP(TCP 일때), IPPROTO_UDP(UDP 일때)
     lsock = socket(AF_INET, SOCK_STREAM, 0);
     if (lsock < 0) {
         perror("[ERR] failed to create lsock.\n");
@@ -180,12 +191,15 @@ int main(int argc, char** argv) {
 
     while (1) {
         printf("[INFO] waiting...\n");
+        //accept 클라이언트 요청 수락함수 int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
         asock = accept(lsock, (struct sockaddr*)&remote_sin, &remote_sin_len);
         if (asock < 0) {
             perror("[ERR] failed to accept.\n");
+            //continue를 통해 아래 로직 타지 않고 위로.
             continue;
         }
 
+        //fork함수는 프로세스를 생성. fork 함수를 호출하는 프로세스는 부모 프로세스가 되고 새롭게 생성되는 프로세스는 자식 프로세스가 됩니다.
         pid = fork();
         if (pid == 0) {
             close(lsock); http_handler(asock); close(asock);
