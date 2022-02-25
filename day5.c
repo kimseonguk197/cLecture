@@ -147,6 +147,7 @@ void func2()
 */
 
 //메모리의 동적할당
+/*
 #include <stdlib.h>    // malloc, free 함수가 선언된 헤더 파일
 
 int main() {
@@ -176,4 +177,4 @@ int local() {
 	//free(numPtr2);    // 동적으로 할당한 메모리 해제
 
 	return numPtr2;
-}
+}*/

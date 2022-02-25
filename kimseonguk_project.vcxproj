@@ -139,11 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Downloads\c_serv\c_serv\serv.c" />
     <ClCompile Include="day1.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="day2.c" />
     <ClCompile Include="day3.c" />
+    <ClCompile Include="day4.c" />
+    <ClCompile Include="day5.c" />
+    <ClCompile Include="day6.c" />
+    <ClCompile Include="http.c" />
+    <ClCompile Include="tetris.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

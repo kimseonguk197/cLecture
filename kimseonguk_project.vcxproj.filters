@@ -24,5 +24,23 @@
     <ClCompile Include="day3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="day4.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day5.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="day6.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="tetris.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="http.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\c_serv\c_serv\serv.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
